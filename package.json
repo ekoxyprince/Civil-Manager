@@ -1,0 +1,44 @@
+{
+  "name": "chidi-project",
+  "version": "1.0.0",
+  "description": "A civil engineering software project",
+  "main": "server.js",
+  "scripts": {
+    "test": "null",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekoxyprince/civil-project.git"
+  },
+  "keywords": [
+    "Civil",
+    "Engineering"
+  ],
+  "author": "Chidi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ekoxyprince/civil-project/issues"
+  },
+  "homepage": "https://github.com/ekoxyprince/civil-project#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "compression": "^1.7.4",
+    "connect-flash": "^0.1.1",
+    "connect-session-sequelize": "^7.1.7",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.3.5",
+    "permissions-policy": "^0.6.0",
+    "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

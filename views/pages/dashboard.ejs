@@ -1,0 +1,68 @@
+<%- include('../partials/pagehead.ejs') %>
+<div class="section">
+
+<div class="section-admin container-fluid">
+    <div class="breadcome-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcome-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="icon nalika-home"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Dashboard One</h2>
+                                        <p>Welcome to Civil <span class="bread-ntd">Project Manager </span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="breadcomb-report">
+                                    <button data-toggle="tooltip" data-placement="left" title="Add Materials" class="btn"><a href="/add_material"><i class="icon nalika-download"></i></a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="row admin text-center">
+        <div class="row">
+        <div class="col-md-12">
+            <% if (materials.length>0) { %>
+             <% materials.forEach(m => { %>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="admin-content analysis-progrebar-ctn res-mg-t-15">
+                        <h4 class="text-left text-uppercase"><b><%= m.material %></b></h4>
+                        <sub>Added</sub><sup style="color: white;"><%= m.date %></sup>
+                        <div class="row vertical-center-box vertical-center-box-tablet">
+                            <div class="col-xs-3 mar-bot-15 text-left">
+                                <% let percentage = (parseFloat(m.amountRemaining)/parseFloat(m.totalAmount))*100 %>
+                                <label class="label <%= percentage>50?'bg-green':'bg-red' %>"><%= (percentage).toFixed(2) %>% <i class="fa fa-level-up" aria-hidden="true"></i></label>
+                            </div>
+                            <div class="col-xs-9 cus-gh-hd-pro">
+                                <h2 class="text-right no-margin"><%= m.totalAmount %> <sup><%= m.unit %></sup></h2>
+                            </div>
+                        </div>
+                        <div class="progress progress-mini">
+                            <div style="width: <%=percentage%>%;" class="progress-bar <%= percentage>50?'bg-green':'bg-red' %>"></div>
+                           
+                        </div>
+                        <sub style="color: white;"><%= (percentage).toFixed(2) %>%</sub>
+                    </div>
+                </div>
+             <% }) %>
+            <% }else{ %>
+ <h1>No Materials Available</h1>
+                <% } %>
+            </div>
+            </div>
+            </div>
+            </div>
+            
+<%- include('../partials/pagefoot.ejs') %>

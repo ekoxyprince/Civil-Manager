@@ -1,0 +1,50 @@
+<%- include('../partials/pagehead.ejs') %>
+<div class="section">
+    <center>
+        <% if(locals.message){ %>
+        <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            <strong>Info!</strong> <%= message %>
+        </div>
+        <% } %>
+    <form action="" style="" class="form-body mg-t-30" method="post">
+        <div class="mg-b-30">
+            Create a new Material
+        </div>
+        <div class="form-group-inner">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <label class="login2 pull-right pull-right-pro">Material</label>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" name="material" required/>
+                </div>
+            </div>
+        </div>
+        <div class="form-group-inner">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <label class="login2 pull-right pull-right-pro">Amount</label>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <input type="number" class="form-control" name="amount" required/>
+                </div>
+            </div>
+        </div>
+        <div class="form-group-inner">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <label class="login2 pull-right pull-right-pro">Unit</label>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" name="unit" required/>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-bg-cl-skype-tw">Add</button>
+</center>
+</div>
+
+<%- include('../partials/pagefoot.ejs') %>

@@ -1,0 +1,46 @@
+<%- include('../partials/pagehead.ejs') %>
+<div class="section">
+    <div class="product-status mg-b-30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="product-status-wrap">
+                        <h4>Record List</h4>
+                        <div class="add-product">
+                            <a href="/add_records">Add Record</a>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Material</th>
+                                <th>Amount Used</th>
+                                <th>Day</th>
+                                <th>Date</th>
+                                <th>Unit</th>
+                            </tr>
+                            <%if(materials.length>0){%>
+                            <% materials.forEach(m => { %>
+                             <% if (m.Records.length>0) { %>
+                              <% m.Records.forEach(r => { %>
+                               <tr>
+                                <td><%=m.material%></td>
+                                <td><%=r.recordAmount%></td>
+                                <td><%=r.day%></td>
+                                <td><%=r.date%></td>
+                                <td><%=m.unit%></td>
+                               </tr>
+                              <% }) %>
+                             <% } %>
+                            <% }) %>
+                                <%}%>
+                        
+                         
+                           
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<%- include('../partials/pagefoot.ejs') %>
