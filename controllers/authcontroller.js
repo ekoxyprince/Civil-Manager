@@ -1,6 +1,7 @@
 const {validationResult} = require('express-validator')
 const User = require('../models/user')
 const bcrypt = require('bcryptjs')
+const tryCatch = require('../utils/trycatch')
 
 exports.postSignin = (req,res,next)=>{
     console.log(req.body)
@@ -38,4 +39,11 @@ exports.postSignin = (req,res,next)=>{
     .catch(error=>{
         console.log(error)
     })
+}
+
+exports.postLogout = (req,res,next)=>{
+   req.session.destroy((error)=>{
+    if (error) throw new Error(error)
+    res.redirect('/signin')
+   })
 }

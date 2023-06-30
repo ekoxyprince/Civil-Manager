@@ -6,12 +6,15 @@ const dotenv = require('dotenv').config()
 const pagesRoute = require('./routes/pages')
 const authRoute = require('./routes/auth')
 const database = require('./utils/database')
+const errorHandler = require('./middlewares/errorhandler')
+const errorController = require('./controllers/errorcontroller')
 const session = require('express-session')
 const flash  = require('connect-flash')
 const helmet = require('helmet')
 const logger = require('morgan')
 const compression = require('compression')
 const permissionPolicy = require('permissions-policy')
+const methodOverride = require('method-override') 
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const myStore = new SequelizeStore({
     db:database
@@ -34,6 +37,7 @@ myStore.sync()
 app.use(flash());
 app.use(compression())
 app.use(helmet())
+app.use(methodOverride('_method'))
 app.use(permissionPolicy(
     {
         features: {
@@ -46,5 +50,7 @@ app.use(logger('dev'))
 
 app.use('/',pagesRoute)
 app.use('/auth',authRoute)
+app.use(errorController.get404)
+app.use(errorHandler)
 
 module.exports = app

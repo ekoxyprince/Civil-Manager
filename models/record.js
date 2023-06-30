@@ -20,6 +20,10 @@ const recordSchema = {
     day:{
         type:Sequelize.TEXT,
         allowNull:false
+    },
+    image:{
+        type:Sequelize.STRING,
+        allowNull:false
     }
 }
 

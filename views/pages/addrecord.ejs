@@ -11,7 +11,7 @@
         <% } %>
         <% let date = new Date() %>
         <% let days = ['Sunday','Monday','Tuesday','Wednesday','Thurday','Friday','Saturday'] %>
-    <form action="" style="" class="form-body mg-t-30" method="post">
+    <form action="" style="" class="form-body mg-t-30" method="post" enctype="multipart/form-data">
         <div class="mg-b-30">
             Create a new Material
         </div>
@@ -48,6 +48,16 @@
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                     <input type="text" class="form-control" name="day" value="<%= days[date.getDay()] %>" required readonly/>
+                </div>
+            </div>
+        </div>
+        <div class="form-group-inner">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <label class="login2 pull-right pull-right-pro">Image</label>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <input type="file" class="form-control" name="image" required/>
                 </div>
             </div>
         </div>

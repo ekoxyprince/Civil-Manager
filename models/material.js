@@ -28,6 +28,10 @@ const materialSchema = {
     date:{
         type:Sequelize.STRING,
         allowNull:false
+    },
+    receipt:{
+        type:Sequelize.STRING,
+        allowNull:false
     }
 }
 module.exports = sequelize.define('Material',materialSchema)

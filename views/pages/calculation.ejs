@@ -1,0 +1,130 @@
+<%- include('../partials/pagehead.ejs') %>
+
+    <center>
+        
+    <form action="" id="calculation" style="" class="form-body mg-t-30" method="post">
+        <div class="mg-b-30">
+            Enter Required fields
+        </div>
+        <div class="form-group-inner">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <label class="login2 pull-right pull-right-pro">Length</label>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <input type="number" class="form-control" id="length" name="length" value="" required/>
+                </div>
+            </div>
+        </div>
+        <div class="form-group-inner">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <label class="login2 pull-right pull-right-pro">Width</label>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <input type="number" class="form-control" id="width" name="width" value="" required/>
+                </div>
+            </div>
+        </div>
+        <div class="form-group-inner">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <label class="login2 pull-right pull-right-pro">Thickness</label>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <input step="0.01" type="number" class="form-control" id="thickness" name="thickness" value="" required/>
+                </div>
+            </div>
+        </div>
+        <div class="form-group-inner">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <label class="login2 pull-right pull-right-pro">Cement</label>
+                   <input type="number" id="cement" value="" style=" border: none; background: transparent; box-shadow: inset 2px 3px rgb(0,0,0.4); color: #fff; text-align: center;">
+            </div>
+           
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <label class="login2 pull-right pull-right-pro">Sand</label>
+               <input type="number" id="sand" value="" style=" border: none; background: transparent; box-shadow: inset 2px 3px rgb(0,0,0.4); color: #fff; text-align: center;">
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <label class="login2 pull-right pull-right-pro">Aggregate</label>
+           <input type="number" id="aggregate" value="" style=" border: none; background: transparent; box-shadow: inset 2px 3px rgb(0,0,0.4); color: #fff; text-align: center;">
+    </div>
+        </div>
+        <div class="form-group-inner">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <label class="login2 pull-right pull-right-pro">Price</label>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <input step="0.01" type="number" class="form-control" id="price" name="price" value="" required/>
+                </div>
+            </div>
+        </div>
+        <div class="form-group-inner">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <label class="login2 pull-right pull-right-pro">Grade</label>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <select name="grade" id="grade" class="form-control">
+                 <option value=undefined selected>Select Grade</option>
+                 <option value="M-10">M-10</option>
+                 <option value="M-15">M-15</option>
+                 <option value="M-20">M-20</option>
+                 <option value="M-25">M-25</option>
+                </select>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-bg-cl-skype-tw mg-b-30">Calculate</button>
+        </form>
+</center>
+<div class="product-status mg-b-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="print_table" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h4><button class="btn bg-blue" id="printBtn">Print</button></h4>
+                    <div class="add-product">
+                       
+                    </div>
+                    <table >
+                        <tr>
+                            <th>Material</th>
+                            <th>Quantity</th>
+                        </tr>
+                        <tr>
+                            <th>Dry Volume</th>
+                            <td id="dv"></td>
+                        </tr>
+                        <tr>    
+                            <th>Volume of Cement</th>
+                            <td id="vc"></td>
+                        </tr>
+                        <tr>
+                            <th>Bag of Cement</th>
+                            <td id="bc"></td>
+                        </tr>
+                        <tr>
+                            <th>Volume of Sand</th>
+                            <td id="vs"></td>
+                        </tr>
+                        <tr>
+                            <th>Volume of Aggregate</th>
+                            <td id="va"></td>
+                        </tr>
+                        <tr>
+                            <th>Price of Cement</th>
+                            <td id="pc"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+<script src="/static/js/calculation.js"></script>
+<%- include('../partials/pagefoot.ejs') %>

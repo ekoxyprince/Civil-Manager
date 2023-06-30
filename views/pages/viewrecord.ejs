@@ -4,10 +4,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="product-status-wrap">
+                    <div class="product-status-wrap" id="tableRecord">
                         <h4>Record List</h4>
                         <div class="add-product">
                             <a href="/add_records">Add Record</a>
+                            <button id="printRecord">Print</button>
                         </div>
                         <table>
                             <tr>
@@ -16,6 +17,7 @@
                                 <th>Day</th>
                                 <th>Date</th>
                                 <th>Unit</th>
+                                <th>Image</th>
                             </tr>
                             <%if(materials.length>0){%>
                             <% materials.forEach(m => { %>
@@ -27,6 +29,7 @@
                                 <td><%=r.day%></td>
                                 <td><%=r.date%></td>
                                 <td><%=m.unit%></td>
+                                <td><button class="btn-bg-cl-digg-tw"><a href="<%=r.image %>" download>Download</a></button></td>
                                </tr>
                               <% }) %>
                              <% } %>
@@ -42,5 +45,5 @@
             </div>
         </div>
 </div>
-
+<script src="/static/js/print.js"></script>
 <%- include('../partials/pagefoot.ejs') %>

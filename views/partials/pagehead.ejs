@@ -105,13 +105,25 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-mail icon-wrap"></i> <span class="mini-click-non">Mailbox</span></a>
+                            <a class="has-arrow" href="#" aria-expanded="false"><i class="icon nalika-analytics icon-wrap"></i> <span class="mini-click-non">Calculations</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                               
+                                        <li>
+                                            <a href="/calc_cubicmeter">Cubic Meter</a>
+                                        </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="#" aria-expanded="false"><i class="icon nalika-exit icon-wrap"></i> <span class="mini-click-non">Auth</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li>
+                                    <form action="/auth/logout" method="post">
+                                       <a> <button type="submit" style="background: none; border: none;">Logout</button></a>
+                                    </form>
+                                </li> 
                             </ul>
                         </li>
                         
-                      
+                       
                        
                       
                     
@@ -156,14 +168,20 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#demo" href="#">Mailbox <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                        <li><a data-toggle="collapse" data-target="#demo" href="#">Calculation <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
                                             <ul id="demo" class="collapse dropdown-header-top">
-                                               
+                                                <li>
+                                                    <a href="/calc_cubicmeter">Cubic Meter</a>
+                                                </li>
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#others" href="#">Miscellaneous <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                        <li><a data-toggle="collapse" data-target="#others" href="#">auth<span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
                                             <ul id="others" class="collapse dropdown-header-top">
-                                                
+                                                <li>
+                                                    <form action="/auth/logout" method="post">
+                                                       <a> <button type="submit" style="background: none; border: none;">Logout</button></a>
+                                                    </form>
+                                                </li> 
                                             </ul>
                                         </li>
                                        
